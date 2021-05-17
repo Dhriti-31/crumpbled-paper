@@ -1,17 +1,16 @@
 class paper{
-	
-	// assign options to the rubber ball
 	constructor(x, y,r) {
 		var options = {
-		  'density':4,
-		  'friction': 1.0,
-		  'restitution':0.5
+		  isStatic:false,
+		  'restitution':0.3,
+		  'friction': 0,
+		  'density':1.2
 		}
 
 		this.x=x;
 		this.y=y;
 		this.r=r;
-		this.body=Bodies.circle(this.x, this.y, (this.r-20)/2, options);
+		this.body=Bodies.circle(this.x, this.y, this.r, options);
         this.image = loadImage("paper.png")
 		World.add(world, this.body);
 
@@ -21,7 +20,7 @@ class paper{
 			var paperpos=this.body.position;	
 			push();
 			translate(paperpos.x, paperpos.y);
-			//rectMode(CENTER)
+		    //rectMode(CENTER)
 			strokeWeight(4);
 			//stroke("black");
 			//fill("darkblue");
@@ -29,5 +28,5 @@ class paper{
 
 			pop()
 	}
-
+	//(-20)/2, radius ke place me lagega line13
 }
